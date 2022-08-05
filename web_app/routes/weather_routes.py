@@ -37,6 +37,12 @@ def weather_forecast():
 # API ROUTES
 #
 
+# Can access these pages (urls) now
+# http://localhost:5000/api/weather/forecast.json
+# http://localhost:5000/api/weather/forecast.json?country_code=US&zip_code=10012
+# http://localhost:5000/api/weather/forecast.json?country_code=US&zip_code=OOPS
+
+
 @weather_routes.route("/api/weather/forecast.json")
 def weather_forecast_api():
     print("WEATHER FORECAST (API)...")
@@ -52,3 +58,4 @@ def weather_forecast_api():
         return jsonify(results)
     else:
         return jsonify({"message":"Invalid Geography. Please try again."}), 404
+
